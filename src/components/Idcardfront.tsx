@@ -35,22 +35,22 @@ function Idcardfront({ data }: Props) {
         <img className="absolute" src={image} alt="ID Card" />
 
         {/* NAME */}
-        <h1 className="absolute z-10 top-[353px] left-[130px] font-serif text-[15.6px]">
+        <h1 className="absolute z-10 top-[352px] left-[130px] font-serif text-[15.6px]">
           {data.name || "STUDENT NAME"}
         </h1>
 
         {/* DEPARTMENT */}
-        <h1 className="absolute z-10 top-[379px] left-[130px] font-serif text-[15.6px]">
+        <h1 className="absolute z-10 top-[378px] left-[130px] font-serif text-[15.6px]">
           {data.dept || "DEPT"}
         </h1>
 
         {/* ROLL NO */}
-        <h1 className="absolute z-10 top-[404px] left-[130px] font-serif text-[15.6px]">
+        <h1 className="absolute z-10 top-[403px] left-[130px] font-serif text-[15.6px]">
           {data.rollNo || "ROLL NO"}
         </h1>
 
         {/* BATCH */}
-        <h1 className="absolute z-10 top-[429px] left-[130px] font-serif text-[15.6px]">
+        <h1 className="absolute z-10 top-[428px] left-[130px] font-serif text-[15.6px]">
           {data.batch || "2022-2026"}
         </h1>
 
