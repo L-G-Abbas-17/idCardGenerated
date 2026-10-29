@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #172033;
+    }
+    .login-card {
+      width: min(92vw, 380px);
+      padding: 32px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(31, 41, 55, 0.10);
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .subtitle { margin: 0 0 26px; color: #667085; font-size: 14px; }
+    label { display: block; margin: 16px 0 7px; font-size: 14px; font-weight: 600; }
+    input {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #d0d5dd;
+      border-radius: 9px;
+      font-size: 15px;
+      outline: none;
+    }
+    input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,.12); }
+    .options { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 15px 0 22px; font-size: 13px; }
+    .remember { display: flex; align-items: center; gap: 7px; color: #475467; }
+    .remember input { width: auto; }
+    a { color: #4f46e5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button {
+      width: 100%; padding: 12px; border: 0; border-radius: 9px;
+      background: #4f46e5; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer;
+    }
+    button:hover { background: #4338ca; }
+    #message { min-height: 18px; margin: 14px 0 0; text-align: center; color: #475467; font-size: 13px; }
+    .signup { margin: 22px 0 0; text-align: center; color: #667085; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to continue to your account.</p>
+
+    <form id="loginForm">
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="username" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+
+      <div class="options">
+        <label class="remember"><input type="checkbox" name="remember" /> Remember me</label>
+        <a href="#" id="forgotLink">Forgot password?</a>
+      </div>
+
+      <button type="submit">Log in</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="signup">Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+  </main>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      message.textContent = 'Demo only — connect this form to your authentication backend to log in.';
+    });
+
+    document.getElementById('forgotLink').addEventListener('click', function (event) {
+      event.preventDefault();
+      message.textContent = 'Password reset needs to be connected to your app.';
+    });
+
+    document.getElementById('signupLink').addEventListener('click', function (event) {
+      event.preventDefault();
+      message.textContent = 'Sign-up needs to be connected to your app.';
+    });
+  </script>
+</body>
+</html>
